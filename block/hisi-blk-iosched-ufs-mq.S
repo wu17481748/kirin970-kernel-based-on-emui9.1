@@ -6524,7 +6524,9 @@ ufs_mq_async_io_dispatch_work_fn:
 	lsr	x19, x0, 2
 	umulh	x19, x19, x1
 	.loc 1 1348 0
+#ifdef CONFIG_HISI_PAGECACHE_HELPER
 	bl	pch_lowmem_check2
+#endif
 .LVL585:
 	cmp	w0, wzr
 	.loc 1 1344 0
@@ -6753,7 +6755,9 @@ ufs_mq_async_io_dispatch_work_fn:
 	movk	x1, 0x28f5, lsl 48
 	umulh	x19, x19, x1
 	.loc 1 1348 0
+#ifdef CONFIG_HISI_PAGECACHE_HELPER
 	bl	pch_lowmem_check2
+#endif
 .LVL604:
 	cmp	w0, wzr
 	.loc 1 1346 0
@@ -52859,7 +52863,9 @@ __ksymtab_blk_mq_tagset_ufs_mq_iosched_enable:
 	.2byte	0x20a
 	.4byte	0x36
 	.uleb128 0x94
+#ifdef CONFIG_HISI_PAGECACHE_HELPER
 	.4byte	.LASF3373
+#endif
 	.byte	0x1
 	.2byte	0x20b
 	.4byte	0x2f
@@ -66215,8 +66221,10 @@ __ksymtab_blk_mq_tagset_ufs_mq_iosched_enable:
 	.string	"flush_queue"
 .LASF1631:
 	.string	"queue_depth"
+#ifdef CONFIG_HISI_PAGECACHE_HELPER
 .LASF3373:
 	.string	"pch_lowmem_check2"
+#endif
 .LASF740:
 	.string	"zone_idx"
 .LASF2739:

@@ -1219,12 +1219,14 @@ pch_lowmem_check:
 	.cfi_def_cfa 31, 0
 	ret
 	.cfi_endproc
+#ifdef CONFIG_HISI_PAGECACHE_HELPER
 .LFE2932:
 	.size	pch_lowmem_check, .-pch_lowmem_check
 	.align	2
 	.global	pch_lowmem_check2
 	.type	pch_lowmem_check2, %function
 pch_lowmem_check2:
+#endif
 .LFB2933:
 	.loc 1 301 0
 	.cfi_startproc
