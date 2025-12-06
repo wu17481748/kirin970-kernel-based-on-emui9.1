@@ -367,6 +367,7 @@ static const struct inode_operations ovl_symlink_inode_operations = {
 
 void ovl_copyattr(struct inode *from, struct inode *to)
 {
+/*
 #ifdef CONFIG_SECURITY
 	void   *secctx;
 	u32  ctxlen;
@@ -378,6 +379,7 @@ void ovl_copyattr(struct inode *from, struct inode *to)
 		 * replace the fresh inode_security_struct because it should be
 		 * the same as the real underlying inode.
 		 */
+		 /*
 		err = security_inode_notifysecctx(to, secctx, ctxlen);
 		security_release_secctx(secctx, ctxlen);
 	}
@@ -385,6 +387,7 @@ void ovl_copyattr(struct inode *from, struct inode *to)
 		WARN(1, "cannot copy up security context err:%d\n", err);
 
 #endif
+*/
 	to->i_uid = from->i_uid;
 	to->i_gid = from->i_gid;
 	to->i_mode = from->i_mode;
